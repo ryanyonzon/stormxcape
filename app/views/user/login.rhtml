@@ -1,0 +1,25 @@
+<%= start_form_tag :action=> "login" %>
+
+<div id="container">
+	<div id="login">
+	
+		<div id="userpass">
+			<ul>
+      <% if @flash['notice'] %>
+			<li><span id="loginerr"><%= @flash['notice'] %></span></li>
+      <% end %>    
+			<li>Username: <input id="login_username" name="login_username" value="" size="20" maxlength="64" type="text" class="inputbox" /></li>
+			<li>Password: <input id="login_password" name="login_password" value="" size="20" maxlength="64" type="password" class="inputbox" /></li>
+			<li><input name="login" value="Login" alt="Submit the Information" title="Submit the Information" type="submit" /></li>		
+			</ul>
+		</div>
+	
+		<div id="logininfo">
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut neque massa, volutpat vel, laoreet id, aliquet in, nibh. Proin a nunc vitae purus egestas vehicula. Integer bibendum, nulla non fringilla molestie.</p>
+		</div>
+		
+	
+	</div>
+</div>
+
+<%= end_form_tag %>

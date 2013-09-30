@@ -1,0 +1,71 @@
+				<div class="left">
+
+				<div class="control_title">
+					Projects
+				</div>
+				
+				<div class="link_tabs">
+					<ul>
+					<li><span><%= link_to 'Created new project', :controller => 'project', :action => 'new' %></span></li>
+					</ul>
+				</div>
+
+				<!-- LISTS OF PROJECTS -->
+
+				
+<%  if Project.count == 0 %>
+
+        <%= render_partial "noproject" %>
+    
+<%
+    else 
+
+        @projects.each do |projects| 
+        
+%>	
+
+	<!-- content -->
+				<div class="coloredboxwrapper">
+					<div class="coloredbox">
+						<div class="coloredbox_title">
+							<% #projects.name 
+							%>
+							
+                            <%
+                                todocount = Todo.count(:conditions => ['project_id = ? AND finished <> 1', projects.id])                                
+                            %>
+                            
+							<%= link_to projects.name, :action => 'view', :id => projects %>&nbsp;<span>(<%= todocount %>)</span>
+							
+						</div>
+						
+								<div class="graybox_links">
+									
+                               <% if @session[:user]['admin'] || projects.user_id == @session[:user]['id'] %>
+									 <%=link_to 'Edit', :action => 'edit', :id => projects.id %>&nbsp;&nbsp;|&nbsp;&nbsp;
+                               <% end %>									
+                               
+                    			<% if @session[:user]['admin'] || projects.user_id == @session[:user]['id'] %>
+                    			     <%= link_to 'Delete', :action => 'destroy', :id => projects.id %>
+                    			<% end %>
+                               
+								</div>
+								
+    					<div class="coloredbox_postinfo">
+    						Created on <span><%= projects.created_on.strftime("%A, %B %d, %Y") %></span> at <span><%= projects.created_on.strftime("%I:%M%p") %></span> by <%= projects.user.first_name %>
+						</div>
+						
+					</div>
+					
+				</div>
+<% 
+
+        end 
+        
+    end
+    
+%>
+
+				<!-- LISTS OF PROJECTS -->					
+					
+				</div>

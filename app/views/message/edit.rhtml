@@ -1,0 +1,34 @@
+<%= start_form_tag :action => "update", :id => @editmessage.id %>
+
+<input id="postmessage_user_id" name="postmessage[user_id]" value="<%= @editmessage.user_id %>" type="hidden" />
+
+				<div class="left">
+
+				<div class="control_title">
+					Message Board :: Edit message
+				</div>
+				
+				<div class="grayboxwrapper">
+					<div class="graybox">
+
+			<ul>
+				<li>Subject</li>
+				<li><input id="postmessage_subject" name="postmessage[subject]" type="text" class="inputbox" size="100" value="<%= @editmessage.subject %>"  /></li>
+			</ul>
+
+			<ul>
+				<li>Message</li>
+				<li><textarea id="postmessage_postmessage" name="postmessage[postmessage]" rows="10" cols="70"><%= @editmessage.postmessage %></textarea></li>
+			</ul>
+
+			<ul>
+                <li><input type="submit" value="Re-Post!" /> or 
+                <%= link_to "Cancel", :action => "lists" %>
+                </li>
+			</ul>
+
+					</div>
+				</div>
+        </div>
+
+<%= end_form_tag %>

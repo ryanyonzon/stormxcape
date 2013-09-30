@@ -1,0 +1,30 @@
+<%= start_form_tag :action => "new" %>
+
+				<div class="left">
+
+<input id="addcomment_user_id" name="addcomment[user_id]" value="<%= @session[:user]['id'] %>" type="hidden" />
+<input id="addcomment_message_id" name="addcomment[message_id]" value="<%= @params[:id] %>" type="hidden" />	
+
+				<div class="control_title">
+					Message Board :: Add Comment
+				</div>
+				
+				<div class="grayboxwrapper">
+					<div class="graybox">
+
+			<ul>
+				<li>Comment</li>
+				<li><textarea id="postmessage_postmessage" name="addcomment[comment]" rows="10" cols="70"></textarea></li>
+			</ul>
+
+			<ul>
+                <li><input type="submit" value="Go!" /> or 
+                <%= link_to "Cancel", :controller => 'message', :action => "lists" %>
+                </li>
+			</ul>
+
+					</div>
+				</div>
+        </div>
+
+<%= end_form_tag %>

@@ -1,0 +1,105 @@
+    <!-- THIS WILL TRICK FCKEDITOR -->	
+    <div style="display:none; position:absolute;">
+        <textarea id="postmessage_postmessage" name="postmessage[postmessage]"></textarea>
+    </div>
+
+				<div class="left">
+
+				<div class="control_title">
+					Message Board
+				</div>
+				
+				<div class="link_tabs">
+					<ul>
+					<li><span><%= link_to 'Post a message', :controller => 'message', :action => 'new' %></span></li>
+					</ul>
+				</div>
+
+				<!-- LISTS OF MESSAGES -->
+
+				
+<%  if Message.count == 0 %>
+
+        <%= render_partial "nomessage" %>
+    
+<%
+    else 
+
+        @messages.each do |messages| 
+        
+%>	
+
+	<!-- content -->
+				<div class="grayboxwrapper">
+					<div class="graybox">
+						<div class="graybox_title">
+							<%= messages.subject %>
+						</div>
+						
+								<div class="graybox_links">
+									
+                               <% if messages.user_id == @session[:user]['id'] %>
+									 <%=link_to 'Edit', :action => 'edit', :id => messages.id %>&nbsp;&nbsp;|&nbsp;&nbsp;
+                               <% end %>									
+                               
+                    			<% if @session[:user]['admin'] || messages.user_id == @session[:user]['id'] %>
+                    			     <%= link_to 'Delete', :action => 'destroy', :id => messages.id %>
+                    			<% end %>
+                               
+								</div>
+						
+						<div class="graybox_postinfo">
+    						Posted on <span><%= messages.created_on.strftime("%A, %B %d, %Y") %></span> at <span><%= messages.created_on.strftime("%I:%M%p") %></span> by <%= messages.user.first_name %>
+						</div>
+
+					<p><%= messages.postmessage %></p>
+					
+					<div class="comments">
+					
+						<%= link_to 'Add Comment', :controller => 'comment', :action => 'new', :id => messages.id %>&nbsp;&nbsp;|&nbsp;&nbsp;
+					
+                        <% if messages.comment.count == 0 %>
+            				Show Comments(<%= messages.comment.count %>)
+        				<% else %>
+    						<a href="#" onclick="$('<%= messages.id %>').style.display == 'none' ? new Effect.BlindDown('<%= messages.id %>', {duration:0.4}) : new Effect.BlindUp('<%= messages.id %>', {duration:0.4}); return false;; return false;">
+    						  Show Comments(<%= messages.comment.count %>)
+    						</a>
+						<% end %>
+					</div>
+					
+					</div>
+					
+    <% if messages.comment.count > 0 %>
+
+					<div id="<%= messages.id %>" style="border: 1px solid #ffcc00; background-color:#ffffdd; padding:15px 10px 15px 10px; width:700px; position:relative; display:none;">
+					
+         <% messages.comment.each do |c| %>
+
+				<div class="commentbox_wrapper">
+
+						<div class="commentbox">
+							<div class="commentbox_commentinfo">
+								Comment posted on <span><%= c.created_on.strftime("%A, %B %d, %Y") %></span> at <span><%= c.created_on.strftime("%I:%M%p") %></span> by <%= c.user.first_name %>
+							</div>
+								<%= c.comment %>
+						</div>
+						
+				</div>						
+				
+		<% end %>
+
+					</div>
+    <% end %>					
+					
+				</div>
+<% 
+
+        end 
+        
+    end
+    
+%>
+
+				<!-- LISTS OF MESSAGES -->					
+					
+				</div>

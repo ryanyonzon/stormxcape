@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>StormXcape - beta 1.0</title>
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen" />
+
+<%= javascript_include_tag "prototype", "effects", "dragdrop", "controls", "fckeditor" %>
+
+<script type="text/javascript">
+    window.onload = function() {
+        var oFCKeditor = new FCKeditor( 'postmessage_postmessage' ) ;
+        oFCKeditor.ToolbarSet = 'Basic' ;
+        oFCKeditor.ReplaceTextarea() ;        
+    }
+</script>
+
+</head>
+
+<body>
+
+	<div id="main">
+	
+		<!-- top links here -->
+		<div id="top">		
+			<div class="left">
+				StormXcape <font face="Arial, Helvetica, sans-serif" size="-2" color="#CCCCCC">beta 1.0</font>
+			</div>
+			<div class="right">
+				<ul>
+					<li><%= link_to 'Logout', :controller => 'user', :action => 'logout' %></li>
+				</ul>
+			</div>
+			
+		</div>
+		<!-- top links here -->		
+		
+		<div id="boxlinks">
+			<div class="control_links">
+    			<%= link_to 'Projects', :controller => 'project', :action => 'lists' %>&nbsp;&nbsp;|&nbsp;&nbsp;
+				<%= link_to 'Message Board', :controller => 'message', :action => 'lists' %>&nbsp;&nbsp;|&nbsp;&nbsp;
+				To-Do Lists&nbsp;&nbsp;|&nbsp;&nbsp;
+                Files
+			</div>
+		</div>
+	
+		<!-- middle part -->
+		<div id="middle">
+
+                <!-- left panel -->
+                <%= @content_for_layout %>
+                <!-- left panel -->
+                			
+				<!-- right panel -->
+				   <%= render :file => '/layouts/rightpanel.rhtml' %>
+				<!-- right panel -->			
+			
+		</div>
+		<!-- middle part -->		
+		
+	</div>
+
+</body>
+
+</html>

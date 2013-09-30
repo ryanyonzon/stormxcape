@@ -1,0 +1,48 @@
+				<div class="right">
+				
+				<div>
+					<div class="right_panel_title">My To-do lists</div>
+					<div class="right_panel">
+                    
+                    <ul>
+    <%
+        #@mytodolist = Todo.find(:all, :conditions => ['user_id = ?', @session[:user]['id']])
+
+        @projects = Project.find(:all)
+        
+        #@mytodolist.each do |mytodo|
+        
+        @projects.each do |projects|
+        
+            mytodocount = Todo.count(:conditions => ['project_id = ? AND finished <> 1 AND user_id = ?', projects.id, @session[:user]['id']])
+
+            if mytodocount > 0
+
+    %>        
+
+        <li>
+        
+        <a href="/project/view/<%= projects.id %>">
+        <%= projects.name %>(<%= mytodocount %>)
+        </a>
+        
+        </li>
+    
+    <%      end %>        
+    
+    <%  end %>
+
+                    </ul>
+                    
+					</div>
+				</div>
+
+				<div>
+					<div class="right_panel_title">Reminders</div>
+					<div class="right_panel">
+					<p>Ut rhoncus, nisi ac consectetuer vehicula, quam libero semper erat, vel consequat mauris est nec turpis. Quisque pulvinar odio in lacus. Curabitur.</p> <p>Congue hendrerit turpis. Nulla sem erat, eleifend quis, ornare et, molestie ut, ligula. Nunc lorem. Fusce feugiat. Maecenas augue.</p>
+					</div>
+				</div>
+				
+				</div>
+

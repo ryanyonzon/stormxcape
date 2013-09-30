@@ -1,0 +1,603 @@
+/* 
+ *	CSS Document 
+ *	Written by Ryan Yonzon <rawswift@gmail.com>
+ *	March 19, 2007
+ */
+
+body {
+	margin:0;
+}
+
+    /*  LOGIN */
+    
+#container {
+	margin-top:70px;
+	margin-bottom:auto;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+/*
+ *	LOGIN
+ */
+
+#login {
+	margin-top:auto;
+	margin-bottom:auto;
+	margin-left:auto;
+	margin-right:auto;
+	background-image:url('loginbg.jpg');
+	background-repeat:no-repeat;
+	width:612px;
+	height:276px;
+}
+
+#userpass {
+	float:right;
+	margin-top:140px;
+	margin-right:40px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+}
+
+#userpass ul {
+	list-style:none;
+	line-height:30px;
+}
+	
+#userpass li {
+	display:block;
+	text-align:right;
+}		
+
+#userpass .inputbox {
+    border:1px solid #CCCCCC;
+}
+
+#loginerr {
+	text-align:right;
+	color:#FF0000;
+	padding: 5px 10px 5px 10px;
+}		
+
+#logininfo {
+	float:left;
+	margin-top:100px;
+	margin-left:60px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	color:#999999;
+	width:250px;
+	text-align:justify;
+	/*list-style-image:url('bullet.jpg');*/
+}
+
+#logout {
+    padding-top:50px;
+    padding-left:50px;
+	width:612px;
+	height:276px;
+	
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	
+}
+
+#logout a {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+    color:#0000CC;	
+}
+
+	/*	TOP LINKS */
+	
+#top {
+	padding:10px 0px 50px 0px;
+	background-color:#356AA0;
+}
+
+	#top a:link, a:visited {
+		color:#FFFFFF;
+	}
+	
+	#top a:hover {
+		color:#FFFFCC;
+	}
+	
+	#top ul {
+		list-style:none;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:14px;
+	}
+
+	#top li {
+		display:inline;
+		padding:0px 15px 0px 0px;
+	}
+	
+	#top .left {
+		float:left;
+		padding-top:10px;
+		padding-left:25px;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:18px;
+		font-weight:bold;
+		color:#FFFFFF;
+	}	
+
+	#top .right {
+		float:right;
+		padding-right:10px;
+	}
+	
+
+/*	BOX LINKS */
+
+#boxlinks {
+	color:#999999;
+	padding:10px 0px 0px 0px;
+	/*border: 1px solid #CCCCCC;*/
+	border-bottom:1px solid #CCCCCC;
+	background-color:#F9F7ED;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;	
+}
+
+	#boxlinks .control_links {
+		padding-left:40px;
+		padding-bottom:10px;
+	}
+
+	#boxlinks .control_links a:link {
+		font-family:Arial, Helvetica, sans-serif;	
+		color:#000000;
+		text-decoration:underline;
+	}
+	
+	#boxlinks .control_links a:visited {
+		font-family:Arial, Helvetica, sans-serif;	
+		color:#000000;
+		text-decoration:underline;		
+	}
+
+	#boxlinks .control_links a:hover {
+		font-family:Arial, Helvetica, sans-serif;	
+		color:#999999;
+		text-decoration:underline;
+	}
+
+	#boxlinks .control_links ul {
+		list-style:none;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:14px;
+	}
+
+	#boxlinks .control_links li {
+		display:inline;
+		padding:0px 15px 0px 0px;
+	}
+
+	
+/*	MIDDLE PART */
+
+#middle {
+	padding:10px 0px 0px 0px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+}
+	
+	#middle .left {
+		float:left;
+		padding-left:10px;
+	}
+
+	#middle .control_title {
+		text-align:left;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:24px;
+		padding-left:10px;
+		padding-bottom:10px;
+		padding-top:10px;
+		color:#999999;
+		width:500px;
+	}
+	
+/*	SUBLINKS */
+
+		#middle .link_tabs {
+			text-align:left;
+			padding-bottom:10px;
+			padding-left:10px;
+			width:500px;
+		}
+		
+			#middle .link_tabs ul {
+				padding:0px 0px 0px 0px;
+				list-style:none;
+				/*line-height:10px;*/
+			}
+			
+			#middle .link_tabs li {
+				display:inline;
+				text-align:left;
+			}		
+			
+			#middle .link_tabs span {
+				background-color:#FFFFFF;
+				padding:7px 7px 7px 7px;
+				border: 1px solid #CCCCCC;
+			}
+			
+			#middle .link_tabs span:hover {
+				background-color:#C3D9FF;
+				/* border: 1px solid #C3D9FF; */
+			}
+			
+			#middle .link_tabs a:link {
+				font-family:Arial, Helvetica, sans-serif;
+				font-size:14px;
+				color:#0000CC;
+				text-decoration:none;				
+			}
+
+			#middle .link_tabs a:visited {
+				font-family:Arial, Helvetica, sans-serif;
+				font-size:14px;
+				color:#0000CC;
+				text-decoration:none;				
+			}
+
+			#middle .link_tabs a:hover {
+				font-family:Arial, Helvetica, sans-serif;
+				font-size:14px;
+				color:#000099;
+				text-decoration:underline;
+			}
+
+/* ------------------------------------------ */
+
+	#middle .grayboxwrapper {
+		padding:0px 0px 10px 5px;
+	}
+
+	#middle .graybox {
+		border: 1px solid #CCCCCC;
+		background-color:#eeeeee;
+		padding:15px 10px 15px 10px;
+		width:700px;
+	}
+	
+			#middle .graybox ul {
+				list-style:none;
+			}
+			
+			#middle .graybox li {
+				display:block;
+			}
+			
+			#middle .graybox textarea {
+				border:1px solid #CCCCCC;
+			}
+
+			#middle .graybox a:link {
+				font-family:Arial, Helvetica, sans-serif;
+				font-size:14px;
+				color:#0000CC;
+			}
+			
+			#middle .graybox a:visited {
+				font-family:Arial, Helvetica, sans-serif;
+				font-size:14px;
+				color:#0000CC;
+			}
+			
+			#middle .graybox a:hover {
+				font-family:Arial, Helvetica, sans-serif;
+				font-size:14px;
+				color:#0066FF;
+			}
+			
+			#middle .inputbox {
+				border:1px solid #CCCCCC;
+			}
+
+	#middle .graybox_title {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:16px;
+		font-weight:bold;
+		color:#FF0000;
+	}
+	
+	#middle .graybox_postinfo {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:12px;
+	}
+
+	#middle .graybox_postinfo span {
+		color:#009900;
+	}	
+	
+	#middle .graybox_links {
+		float:left;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:10px;
+		color:#666666;
+		padding-right:10px;
+	}	
+	
+	#middle .graybox_links a:link {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:10px;
+		color:#0000CC;
+	}
+	
+	#middle .graybox_links a:visited {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:10px;
+		color:#0000CC;
+	}
+	
+	#middle .graybox_links a:hover {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:10px;
+		color:#0066FF;
+	}
+	
+/*	ANOTHER COLOR AREA */
+
+	#middle .coloredboxwrapper {
+		padding:0px 0px 10px 5px;
+	}
+
+	#middle .coloredbox {
+		border: 1px solid #CCCCCC;
+		background-color:#F9F7ED;
+		padding:15px 10px 15px 10px;
+		width:700px;
+	}
+	
+    	#middle .coloredbox_title {
+    		font-family:Arial, Helvetica, sans-serif;
+    		font-size:18px;
+    		font-weight:bold;
+    		color:#FF0000;
+    	}
+
+    	#middle .coloredbox_title span {
+    		font-family:Arial, Helvetica, sans-serif;
+    		font-size:18px;
+    		font-weight:bold;
+    		color:#3F4C6B;
+    	}
+
+    	#middle .coloredbox_title a:link {
+    		font-family:Arial, Helvetica, sans-serif;
+    		font-size:18px;
+    		font-weight:bold;
+    		color:#FF0000;
+    	}
+    
+    	#middle .coloredbox_title a:visited {
+    		font-family:Arial, Helvetica, sans-serif;
+    		font-size:18px;
+    		font-weight:bold;
+    		color:#FF0000;
+    	}
+    
+    	#middle .coloredbox_title a:hover {
+    		font-family:Arial, Helvetica, sans-serif;
+    		font-size:18px;
+    		font-weight:bold;
+    		color:#FF6600;
+    	}
+	
+	#middle .coloredbox_postinfo {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:12px;
+	}
+
+	#middle .coloredbox_postinfo span {
+		color:#009900;
+	}	
+	
+	#middle .coloredbox_links {
+		float:left;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:10px;
+		color:#666666;
+		padding-right:10px;
+	}	
+	
+	#middle .coloredbox_links a:link {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:10px;
+		color:#0000CC;
+	}
+	
+	#middle .coloredbox_links a:visited {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:10px;
+		color:#0000CC;
+	}
+	
+	#middle .coloredbox_links a:hover {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:10px;
+		color:#0066FF;
+	}
+
+
+	#middle .todos {
+		background-color:#F9F7ED;
+	}
+
+	#middle .todo select {
+		border:1px solid #CCCCCC;
+	}
+
+	#middle .todos span {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:14px;
+		font-weight:bold;
+		color:#356AA0;
+	}
+
+	#middle .todos h3 {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:14px;
+		fond-weight:bold;
+		color:#666666;
+	}
+
+	#middle .todos p {
+		line-height:25px;
+	}
+
+	#middle .todos img {
+		border:none;
+		padding-left:5px;
+	}
+
+	#middle .todos ul {
+		list-style:none;
+		padding-bottom:10px;
+		line-height:25px;
+		padding:10px 10px 10px 10px;
+		padding-left:40px;
+	}
+	
+	#middle .todos li {
+		background-color:#F9F7ED;
+		border-bottom:1px dashed #3F4C6B;
+	}
+
+	#middle .todos a:link {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:14px;
+		color:#0000CC;
+	}
+	
+	#middle .todos a:visited {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:14px;
+		color:#0000CC;
+	}
+	
+	#middle .todos a:hover {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:14px;
+		color:#0066FF;
+	}
+
+/*  RIGHT AREA */
+
+	#middle .right {
+		float:right;
+		padding-right:20px;
+		padding-bottom:10px;
+	}	
+	
+	#middle .right_panel {
+		width:220px;
+		border: 1px solid #CCCCCC;
+		background-color:#e7effe;
+		padding:5px 5px 5px 5px;
+	}
+
+	#middle .right_panel a:link {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:14px;
+		color:#0000CC;
+		text-decoration:none;
+	}
+	
+	#middle .right_panel a:visited {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:14px;
+		color:#0000CC;
+		text-decoration:none;		
+	}
+	
+	#middle .right_panel a:hover {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:14px;
+		color:#0066FF;
+		text-decoration:none;		
+	}
+
+	#middle .right_panel ul {
+	    list-style:none;
+		padding-left:5px;
+		padding-right:5px;
+	}
+	
+	#middle .right_panel li {
+		border-bottom:1px dashed #3F4C6B;	
+	}
+
+	#middle .right_panel_title {
+		text-align:left;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:18px;
+		padding-left:10px;
+		padding-bottom:10px;
+		padding-top:10px;
+		color:#999999;
+	}
+
+	#middle .comments {
+		float:right;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:10px;
+		color:#999999;
+	}
+	
+	#middle .comments a:link {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:10px;
+		color:#0000CC;
+	}
+	
+	#middle .comments a:visited {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:10px;
+		color:#0000CC;
+	}
+	
+	#middle .comments a:hover {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:10px;
+		color:#0066FF;
+	}
+
+	#middle .commentbox_wrapper {
+		padding-top:10px;
+		padding-bottom:10x;
+	}
+
+	#middle .commentbox {
+		border: 1px solid #CCCCCC;
+		background-color:#ffffdd;
+		padding:10px 10px 10px 10px;
+	}
+
+	#middle .commentbox_title {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:16px;
+		font-weight:bold;
+		color:#FF0000;
+	}
+
+	#middle .commentbox_commentinfo {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:12px;
+	}
+
+	#middle .commentbox_commentinfo span {
+		color:#009900;
+	}	
+
+/*	FOOTER */
+
+#footer {
+}

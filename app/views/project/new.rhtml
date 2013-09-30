@@ -1,0 +1,29 @@
+<%= start_form_tag :action=>"new" %>
+
+<input id="newproject_user_id" name="newproject[user_id]" value="<%= @session[:user]['id'] %>" type="hidden" />
+
+				<div class="left">
+
+				<div class="control_title">
+					Projects :: Create new project
+				</div>
+				
+				<div class="grayboxwrapper">
+					<div class="graybox">
+
+			<ul>
+				<li>Name</li>
+				<li><input id="newproject_name" name="newproject[name]" type="text" class="inputbox" size="100"  /></li>
+			</ul>
+
+			<ul>
+                <li><input type="submit" value="Create!" /> or 
+                <%= link_to "Cancel", :action => "lists" %>
+                </li>
+			</ul>
+
+					</div>
+				</div>
+        </div>
+
+<%= end_form_tag %>

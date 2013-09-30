@@ -1,0 +1,42 @@
+<%= start_form_tag :action=>"new" %>
+
+<input id="postmessage_project_id" name="postmessage[project_id]" value="<%= @params[:id] %>" type="hidden" />
+<input id="postmessage_assigned_by" name="postmessage[assigned_by]" value="<%= @session[:user]['id'] %>" type="hidden" />
+
+				<div class="left">
+
+				<div class="control_title">
+					Projects :: Todo
+				</div>
+				
+				<div class="grayboxwrapper">
+					<div class="graybox">
+
+			<ul>
+			     
+			     <li>Assign to:&nbsp;&nbsp;
+        <select id="postmessage_user_id" name="postmessage[user_id]">
+            <option value="0">Anyone</option>        
+            <% @user.each do |users| %>			     
+                <option value="<%= users.id %>"><%= users.first_name %></option>
+            <% end %>
+        </select>         
+                </li>
+			
+				<li>&nbsp;</li>
+				<li>
+<textarea id="postmessage_postmessage" name="postmessage[todo]" rows="3" cols="75"></textarea>				
+				</li>
+			</ul>
+
+			<ul>
+                <li><input type="submit" value="Go!" /> or 
+                <%= link_to "Cancel", :controller => 'project', :action => 'view', :id => @params[:id] %>
+                </li>
+			</ul>
+
+					</div>
+				</div>
+        </div>
+
+<%= end_form_tag %>

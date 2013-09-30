@@ -1,0 +1,130 @@
+				<div class="left">
+
+				<div class="control_title">
+					Project :: <%= @projectview['name'] %>
+				</div>
+				
+				<div class="link_tabs">
+					<ul>
+					<li><span><%= link_to 'Add Todo', :controller => 'todo', :action => 'new', :id => @projectview['id'] %></span></li>
+					<li><span><%= link_to 'Upload File', :controller => 'fileshare', :action => 'new', :id => @projectview['id'] %></span></li>
+					</ul>
+				</div>
+
+	<!-- content -->
+				<div class="coloredboxwrapper">
+					<div class="coloredbox">
+
+						<div class="coloredbox_title">
+                               <%= @projectview['name'] %>
+						</div>
+						
+    					<div class="coloredbox_postinfo">
+    						Created on <span><%= @projectview['created_on'].strftime("%A, %B %d, %Y") %></span> at <span><%= @projectview['created_on'].strftime("%I:%M%p") %></span>
+						</div>
+
+
+<!-- TODO -->
+
+    <div class="todos">
+    
+        <br />&nbsp;&nbsp;&nbsp;<font style="font-family:Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold; color:#666666;">
+		  Todo Lists</font>&nbsp;&nbsp;|&nbsp;&nbsp;<%= link_to 'Add Todo', :controller => 'todo', :action => 'new', :id => @projectview['id'] %>
+
+		<ul>
+
+<% @projecttodo.each do |todo| %>
+			<li>
+
+            <font style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#006E2E;">
+			Assigned to 
+			
+        <% if todo.user_id != 0 %>
+			<span><%= todo.user.first_name %></span>&nbsp;
+		<% else %>
+			<span>Anyone</span>&nbsp;
+		<% end %>
+			
+		on
+			
+			<%= todo.created_on.strftime("%A, %B %d, %Y") %>
+			&nbsp;at&nbsp;
+			<%= todo.created_on.strftime("%I:%M%p") %>			
+			</font>
+			
+    <a href="/todo/done/<%= todo.id %>?project=<%= todo.project_id %>"><img src="/images/bullet.jpg" /></a>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+	<td width="20px">&nbsp;</td>
+	<td valign="top" align="left">
+
+			<%= todo.todo %>
+			
+    </td>
+	</tr>
+	</table>
+
+
+			</li>
+<% end %>
+
+		</ul>
+	</div>
+
+<!-- TODO -->	
+
+<!-- FILES -->
+    <div class="todos">
+    
+        <br />&nbsp;&nbsp;&nbsp;<font style="font-family:Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold; color:#666666;">
+		  Files</font>&nbsp;&nbsp;|&nbsp;&nbsp;<%= link_to 'Upload File', :controller => 'fileshare', :action => 'new', :id => @projectview['id'] %>
+
+		<ul>
+
+<% filecount = Fileshare.count(:conditions => ['project_id = ?', @params[:id]]) %>
+
+<% if filecount > 0 %>
+
+    <% @sharedfiles.each do |file| %>		
+            
+            <li><a href="<%= '/' + file.path + '/' + file.filename %>"><%= file.filename %></a>
+            
+            <font style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#006E2E;">
+            &nbsp;&nbsp;-&nbsp;&nbsp;
+            
+            Uploaded on <%= file.created_on.strftime("%A, %B %d, %Y") %>
+			&nbsp;at&nbsp;
+			<%= file.created_on.strftime("%I:%M%p") %>			
+			</font>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr>
+	<td width="20px">&nbsp;</td>
+	<td valign="top" align="left">
+
+            <%= file.description %>
+			
+    </td>
+	</tr>
+	</table>
+            
+            </li>
+    <% end %>			
+    
+<% else %>    
+
+    <li>No files associated to this project.</li>
+
+<% end %>
+
+		</ul>
+	</div>
+	
+<!-- FILES -->
+
+					</div>
+					
+				</div>
+				
+				</div>

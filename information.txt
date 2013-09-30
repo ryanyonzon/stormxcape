@@ -1,0 +1,8 @@
+Application:	stormXcape
+Description:	Web collaboration system
+Language: 	Ruby
+Framework:	Rails
+RDMS:		MySQL
+Libraries:	FCKeditor - Web-based HTML text editor
+		script.aculo.us - visual and ajax effects
+Date:		April 2007
